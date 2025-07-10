@@ -1,0 +1,193 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna y legible */
+    /* Fondo con un degradado de colores muy llamativos */
+    background: linear-gradient(135deg, #FF6F61 0%, #DE369D 33%, #8A2BE2 66%, #4169E1 100%);
+    background-size: 400% 400%; /* Permite la animación del degradado */
+    animation: gradientAnimation 15s ease infinite; /* Animación para el degradado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    overflow: hidden; /* Evita barras de desplazamiento si la animación excede el viewport */
+}
+
+/* Animación del degradado de fondo */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor principal del login */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo casi opaco para el card */
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para un efecto flotante */
+    padding: 50px;
+    width: 100%;
+    max-width: 450px; /* Un poco más ancho */
+    text-align: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición para interactividad */
+}
+
+.login-container:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento al pasar el ratón */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); /* Sombra más intensa al pasar el ratón */
+}
+
+/* Estilos para el título del login */
+/* La clase .login-card h2 no está en tu HTML, la cambiamos a .login-card-title */
+.login-card-title {
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.8em; /* Título más grande */
+    font-weight: 800; /* Más audaz */
+    text-transform: uppercase; /* Mayúsculas para impacto */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    background: linear-gradient(45deg, #DE369D, #8A2BE2); /* Degradado en el texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Para que el degradado se aplique correctamente */
+}
+
+/* Grupo de entrada (input + icono) */
+.input-group {
+    position: relative;
+    margin-bottom: 30px; /* Más espacio entre campos */
+}
+
+.input-group i {
+    position: absolute;
+    left: 20px; /* Icono un poco más a la derecha */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6a11cb; /* Color de icono más vibrante */
+    font-size: 1.3em; /* Icono más grande */
+    transition: color 0.3s ease;
+}
+
+.input-group input {
+    width: calc(100% - 70px); /* Ajuste de ancho para el icono */
+    padding: 18px 18px 18px 60px; /* Más padding para los inputs */
+    border: 2px solid #ddd; /* Borde ligeramente más grueso */
+    border-radius: 12px; /* Bordes más redondeados para inputs */
+    font-size: 1.1em; /* Texto de input más grande */
+    color: #555;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #4169E1; /* Borde azul brillante al enfocar */
+    box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.2); /* Sombra suave al enfocar */
+    outline: none;
+}
+
+.input-group input:focus + i {
+    color: #4169E1; /* Icono del mismo color que el borde al enfocar */
+}
+
+/* Estilos para el botón de login */
+.login-button {
+    width: 100%;
+    padding: 18px; /* Más padding para el botón */
+    background: linear-gradient(45deg, #4CAF50, #8BC34A); /* Degradado verde llamativo para el botón */
+    color: white;
+    border: none;
+    border-radius: 12px; /* Bordes más redondeados */
+    font-size: 1.3em; /* Texto del botón más grande */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+    transition: all 0.3s ease; /* Transiciones más completas */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.login-button:hover {
+    background: linear-gradient(45deg, #8BC34A, #4CAF50); /* Invertir degradado al pasar el ratón */
+    transform: translateY(-3px) scale(1.02); /* Pequeño levantamiento y agrandamiento */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.login-button:active {
+    transform: translateY(0) scale(1); /* Vuelve a su posición original al hacer click */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los enlaces */
+.links {
+    margin-top: 30px; /* Más espacio sobre los enlaces */
+    display: flex;
+    justify-content: space-around; /* Distribuir los enlaces uniformemente */
+    font-size: 1em; /* Tamaño de fuente ligeramente más grande */
+}
+
+.links a {
+    color: #6a11cb; /* Color vibrante para los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.links a:hover {
+    color: #4169E1; /* Cambio de color al pasar el ratón */
+    text-decoration: underline; /* Subrayado sutil */
+}
+
+/* Estilos para mensajes de error */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 10px; /* Bordes más redondeados */
+    font-weight: bold;
+    font-size: 0.95em;
+    animation: fadeIn 0.5s ease-out; /* Animación de aparición */
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #fcebeb; /* Fondo más claro para el error */
+    border-color: #f5c6cb;
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.1);
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos para los campos con error */
+.input-group.has-error input {
+    border-color: #dc3545; /* Borde rojo más estándar para el error */
+    box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.2); /* Sombra roja al tener error */
+}
+
+.help-block {
+    color: #dc3545; /* Color rojo vibrante para el texto del error */
+    font-size: 0.9em; /* Error un poco más visible */
+    margin-top: 8px; /* Más espacio */
+    display: block;
+    text-align: left;
+    padding-left: 60px; /* Alinea con el inicio del texto del input */
+    font-weight: 600; /* Texto de error un poco más audaz */
+}
+
+/* Estilo para el mensaje de error existente */
+.error-message {
+    color: #a94442;
+    background-color: #fcebeb;
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 0.95em;
+    animation: fadeIn 0.5s ease-out;
+}
